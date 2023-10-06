@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="BlissRoms"
+          fetch="https://github.com/BlissRoms"
+          revision="typhoon"
+          review="review.blissroms.org" />
+
+  <remote name="BlissRoms-Beta"
+          fetch="https://github.com/BlissRoms-Beta"
+          revision="17"
+          review="review.blissroms.org" />
+
+  <remote name="BlissRoms-Devices"
+          fetch="https://github.com/BlissRoms-Devices" />
+
+  <remote name="BlissRoms-gitlab"
+          fetch="https://gitlab.com/BlissLabs/BlissRoms"
+          revision="typhoon" />
+
+  <remote name="BR-x86"
+          fetch="https://github.com/BlissRoms-x86" />
+
+  <remote name="github"
+          fetch="https://github.com/" />
+
+  <remote name="gitlab"
+          fetch="https://gitlab.com/" />
+
+  <!-- Remove first some AOSP repos -->
+  <include name="remove.xml" />
+
+  <!-- End Remove AOSP repos -->
+
+  <!-- General Repos -->
+  <project path="manifest" name="platform_manifest" remote="BlissRoms-Beta" />
+  <project path="bionic" name="platform_bionic" remote="BlissRoms-Beta" />
+  <project path="bootable/recovery" name="platform_bootable_recovery" remote="BlissRoms-Beta" />
+  <project path="build/make" name="platform_build_make" remote="BlissRoms-Beta">
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="platform_build_soong" remote="BlissRoms-Beta">
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+
+  <!-- External -->
+  <project path="external/tinyxml" name="platform/external/tinyxml" groups="pdk" revision="refs/tags/android-11.0.0_r45" />
+  <project path="external/cronet" name="platform_external_cronet" remote="BlissRoms-gitlab" revision="17" />
+  <project path="external/gptfdisk" name="platform_external_gptfdisk" groups="pdk" remote="BlissRoms-Beta" />
+  <project path="external/mksh" name="platform_external_mksh" groups="pdk" remote="BlissRoms-Beta" />
+  <project path="external/tinycompress" name="platform_external_tinycompress" groups="pdk" remote="BlissRoms-Beta" />
+  <project path="external/zstd" name="platform_external_zstd" groups="pdk" remote="BlissRoms-Beta" />
+
+  <!-- Frameworks -->
+  <project path="frameworks/av" name="platform_frameworks_av" remote="BlissRoms-Beta" />
+  <project path="frameworks/base" name="platform_frameworks_base" remote="BlissRoms-Beta" />
+  <project path="frameworks/native" name="platform_frameworks_native" remote="BlissRoms-Beta" />
+
+  <!-- Hardware -->
+  <project path="hardware/libhardware" name="platform_hardware_libhardware" remote="BlissRoms-Beta" />
+  <project path="hardware/bliss/interfaces" name="platform_hardware_bliss_interfaces" remote="BlissRoms-Beta" />
+  <project path="hardware/lineage/compat" name="platform_hardware_lineage_compat" remote="BlissRoms-Beta" />
+
+  <!-- Hardware QCOM -->
+  <project path="hardware/qcom-caf/msm8953/display" name="platform_hardware_qcom_display" groups="qcom,msm8953" revision="17-caf-msm8953" remote="BlissRoms-Beta" />
+  <project path="hardware/qcom-caf/sdm660/display" name="platform_hardware_qcom_display" groups="qcom,sdm660" revision="17-caf-sdm660" remote="BlissRoms-Beta" />
+  <project path="hardware/qcom-caf/msm8996/display" name="platform_hardware_qcom_display" groups="qcom,legacy-qcom" revision="17-caf-msm8996" remote="BlissRoms-Beta" />
+  <project path="hardware/qcom-caf/msm8998/display" name="platform_hardware_qcom_display" groups="qcom,legacy-qcom" revision="17-caf-msm8998" remote="BlissRoms-Beta" />
+  <project path="hardware/qcom-caf/sdm845/audio" name="platform_hardware_qcom_audio" groups="qcom,sdm845" remote="BlissRoms-Beta" revision="17-caf-sdm845" />
+  <project path="hardware/qcom-caf/sdm845/display" name="platform_hardware_qcom_display" groups="qcom,sdm845" remote="BlissRoms-Beta" revision="17-caf-sdm845" />
+  <project path="hardware/qcom-caf/sm8150/audio" name="platform_hardware_qcom_audio" groups="qcom,msmnile" remote="BlissRoms-Beta" revision="17-caf-sm8150" />
+  <project path="hardware/qcom-caf/sm8150/display" name="platform_hardware_qcom_display" groups="qcom" remote="BlissRoms-Beta" revision="17-caf-sm8150" />
+  <project path="hardware/qcom-caf/sm8250/audio" name="platform_hardware_qcom_audio" groups="qcom,kona" remote="BlissRoms-Beta" revision="17-caf-sm8250" />
+  <project path="hardware/qcom-caf/sm8250/display" name="platform_hardware_qcom_display" groups="qcom" remote="BlissRoms-Beta" revision="17-caf-sm8250" />
+  <project path="hardware/qcom-caf/sm8350/display" name="platform_hardware_qcom_display" groups="qcom" remote="BlissRoms-Beta" revision="17-caf-sm8350" />
+  <project path="hardware/qcom-caf/sm8450/display" name="platform_hardware_qcom_display" groups="qcom" remote="BlissRoms-Beta" revision="17-caf-sm8450" />
+  <project path="hardware/qcom-caf/sm8550/display" name="platform_hardware_qcom_display" groups="qcom" remote="BlissRoms-Beta" revision="17-caf-sm8550" />
+  <project path="hardware/qcom/wlan" name="platform_hardware_qcom_wlan" remote="BlissRoms-Beta" />
+
+  <!-- Modules -->
+  <project path="packages/modules/adb" name="platform_packages_modules_adb" remote="BlissRoms-Beta" />
+
+  <!-- Prebuilts -->
+  <project path="prebuilts/clang/host/linux-x86/clang-r416183b1" name="platform_prebuilts_clang_host_linux-x86_clang-r416183b1" remote="BlissRoms" />
+
+  <!-- Packages -->
+  <project path="packages/apps/Settings" name="platform_packages_apps_Settings" remote="BlissRoms-Beta" />
+  <project path="packages/apps/ThemePicker" name="platform_packages_apps_ThemePicker" remote="BlissRoms-Beta" />
+
+  <!-- Sepolicy -->
+  <project path="device/qcom/sepolicy_vndr-legacy-um" name="platform_device_qcom_sepolicy_vndr" remote="BlissRoms-Beta" revision="17-legacy-um" />
+  <project path="device/qcom/sepolicy_vndr" name="platform_device_qcom_sepolicy_vndr" remote="BlissRoms-Beta" />
+  <project path="device/qcom/sepolicy-legacy-um" name="platform_device_qcom_sepolicy" remote="BlissRoms-Beta" revision="17-legacy-um" />
+  <project path="device/qcom/sepolicy" name="platform_device_qcom_sepolicy" remote="BlissRoms-Beta" />
+  <project path="device/bliss/sepolicy" name="platform_device_bliss_sepolicy" remote="BlissRoms-Beta" />
+
+  <!-- System -->
+  <project path="system/core" name="platform_system_core" remote="BlissRoms" revision="17" />
+  <project path="system/extras" name="platform_system_extras" remote="BlissRoms-Beta" />
+  <project path="system/libhidl" name="platform_system_libhidl" remote="BlissRoms-Beta" />
+  <project path="system/sepolicy" name="platform_system_sepolicy" remote="BlissRoms-Beta" revision="17" />
+  <project path="system/tools/mkbootimg" name="platform_system_tools_mkbootimg" remote="BlissRoms-Beta" />
+
+  <!-- QCOM OpenSource -->
+  <project path="vendor/qcom/opensource/data-ipa-cfg-mgr" name="platform_vendor_qcom_opensource_data-ipa-cfg-mgr" groups="qcom,waipio-vendor" remote="BlissRoms-Beta" />
+  <project path="vendor/qcom/opensource/data-ipa-cfg-mgr-legacy-um" name="platform_vendor_qcom_opensource_data-ipa-cfg-mgr" groups="qcom,lahaina" revision="17-legacy-um" remote="BlissRoms-Beta" />
+
+  <!-- Vendor -->
+  <project path="vendor/bliss" name="platform_vendor_bliss" remote="BlissRoms-Beta" />
+  <project path="vendor/overlays" name="platform_vendor_overlays" remote="BlissRoms-Beta" />
+  <project path="vendor/support" name="platform_vendor_support" remote="BlissRoms-Beta" />
+
+</manifest>
