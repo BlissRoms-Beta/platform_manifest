@@ -117,4 +117,7 @@
   <project path="vendor/overlays" name="platform_vendor_overlays" remote="BlissRoms-Beta" />
   <project path="vendor/support" name="platform_vendor_support" remote="BlissRoms-Beta" />
 
+  <!-- Vendor NXP -->
+  <project path="vendor/nxp/opensource/commonsys/packages/apps/Nfc" name="platform_vendor_nxp_opensource_packages_apps_Nfc" remote="BlissRoms-Beta" />
+
 </manifest>
