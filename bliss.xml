@@ -66,6 +66,7 @@
   <!-- Hardware -->
   <project path="hardware/libhardware" name="platform_hardware_libhardware" remote="BlissRoms-Beta" />
   <project path="hardware/bliss/interfaces" name="platform_hardware_bliss_interfaces" remote="BlissRoms-Beta" />
+  <project path="hardware/interfaces" name="platform_hardware_interfaces" remote="BlissRoms-Beta" />
   <project path="hardware/lineage/compat" name="platform_hardware_lineage_compat" remote="BlissRoms-Beta" />
 
   <!-- Hardware QCOM -->
@@ -105,8 +106,10 @@
   <project path="system/core" name="platform_system_core" remote="BlissRoms" revision="17" />
   <project path="system/extras" name="platform_system_extras" remote="BlissRoms-Beta" />
   <project path="system/libhidl" name="platform_system_libhidl" remote="BlissRoms-Beta" />
-  <project path="system/sepolicy" name="platform_system_sepolicy" remote="BlissRoms-Beta" revision="17" />
+  <project path="system/security" name="platform_system_security" remote="BlissRoms-Beta" />
+  <project path="system/sepolicy" name="platform_system_sepolicy" remote="BlissRoms-Beta" />
   <project path="system/tools/mkbootimg" name="platform_system_tools_mkbootimg" remote="BlissRoms-Beta" />
+  <project path="system/vold" name="platform_system_vold" remote="BlissRoms-Beta" /> 
 
   <!-- QCOM OpenSource -->
   <project path="vendor/qcom/opensource/data-ipa-cfg-mgr" name="platform_vendor_qcom_opensource_data-ipa-cfg-mgr" groups="qcom,waipio-vendor" remote="BlissRoms-Beta" />
