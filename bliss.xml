@@ -81,6 +81,7 @@
   <project path="hardware/qcom-caf/sm8250/audio" name="platform_hardware_qcom_audio" groups="qcom,kona" remote="BlissRoms-Beta" revision="17-caf-sm8250" />
   <project path="hardware/qcom-caf/sm8250/display" name="platform_hardware_qcom_display" groups="qcom" remote="BlissRoms-Beta" revision="17-caf-sm8250" />
   <project path="hardware/qcom-caf/sm8350/display" name="platform_hardware_qcom_display" groups="qcom" remote="BlissRoms-Beta" revision="17-caf-sm8350" />
+  <project path="hardware/qcom-caf/sm8450/audio/agm" name="platform_vendor_qcom_opensource_agm" groups="qcom,waipio-vendor" remote="BlissRoms-Beta" revision="17-caf-sm8450" />
   <project path="hardware/qcom-caf/sm8450/display" name="platform_hardware_qcom_display" groups="qcom" remote="BlissRoms-Beta" revision="17-caf-sm8450" />
   <project path="hardware/qcom-caf/sm8550/display" name="platform_hardware_qcom_display" groups="qcom" remote="BlissRoms-Beta" revision="17-caf-sm8550" />
   <project path="hardware/qcom/wlan" name="platform_hardware_qcom_wlan" remote="BlissRoms-Beta" />
